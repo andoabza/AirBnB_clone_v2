@@ -42,7 +42,7 @@ This repository contains the initial stage of a student project to build a clone
 
     * show - Shows an object based on class and UUID
 
-    * all - Shows all objects the program has access to, or all objects of a given class
+    * all - Shows all objects the program has access to, or all objects of a given class.
 
     * update - Updates existing attributes an object based on class name and UUID
 
