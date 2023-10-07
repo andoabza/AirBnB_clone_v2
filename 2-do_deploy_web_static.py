@@ -2,6 +2,7 @@
 """ import modules """
 from fabric.api import put, run, env
 from os.path import exists
+from os import symlink
 
 env.hosts = ['54.174.170.168', '54.90.32.242']
 #env.key_filename = '~/.ssh/school'
@@ -29,9 +30,9 @@ def do_deploy(archive_path):
         run('rm /tmp/{}'.format(archive_filename))
 
         run('rm -rf /data/web_static/current')
-
+        dest = '/data/web_static/current'
         run('ln -s {} /data/web_static/current'.format(archive_folder))
-
+        symlink(archive_folder, dest)
         return True
 
     except Exception as e:
