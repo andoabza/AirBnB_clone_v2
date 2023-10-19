@@ -15,6 +15,7 @@ def hbnb():
 @app.route('/c/<text>')
 def tex(text):
     """ print text using escape"""
-    return f"C {escape(text)}"
+    x = text.replace('_', ' ')
+    return f"C {x}"
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=5000)
