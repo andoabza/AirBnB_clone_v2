@@ -28,10 +28,11 @@ def python(text=None):
     x = text.replace('_', ' ')
     return f"Python {x}"
 
-@app.route('/number/<int:n>')
+@app.route('/number/<n>')
 def number(n):
     """ print n if it's number"""
-    return f"{n} is a number"
+    m = int(n)
+    return f"{m} is a number"
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=5000)
