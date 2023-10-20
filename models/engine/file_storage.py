@@ -74,6 +74,8 @@ class FileStorage:
     def close(self):
         """Reload JSON objects
         """
+        reload()
+
         return self.reload()
 
     def delete(self, obj=None):
