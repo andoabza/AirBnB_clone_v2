@@ -41,11 +41,11 @@ def python(text=None):
     return f"Python {x}"
 
 
-@app.route('/number/<n>')
+@app.route('/number/<int:n>')
 def number(n):
     """ print n if it's number"""
 
-    return f"{int(n)} is a number"
+    return f"{n} is a number"
 
 
 if __name__ == "__main__":
