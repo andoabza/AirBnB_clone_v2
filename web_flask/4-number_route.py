@@ -44,9 +44,8 @@ def python(text=None):
 @app.route('/number/<n>')
 def number(n):
     """ print n if it's number"""
-    m = int(n)
 
-    return f"{m} is a number"
+    return f"{int(n)} is a number"
 
 
 if __name__ == "__main__":
