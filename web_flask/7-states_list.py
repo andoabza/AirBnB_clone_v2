@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """ a script that import from storage"""
-from flask import Flask
+from flask import Flask, render_template
 from models import storage
-from models.state import State
+
 
 app = Flask(__name__)
 strict_slashes = False
@@ -10,10 +10,10 @@ strict_slashes = False
 
 @app.route('/states_list')
 def states_list():
-    states = storage.all(State)
-    sorted_states = sorted(states.values(), key=lambda x: x.name)
+    states = storage.all("State")
+    #sorted_states = sorted(states.values(), key=lambda x: x.name)
 
-    return render_template('7-states_list.html', states=sorted_states)
+    return render_template('7-states_list.html', states=states)
 
 
 @app.teardown_appcontext
